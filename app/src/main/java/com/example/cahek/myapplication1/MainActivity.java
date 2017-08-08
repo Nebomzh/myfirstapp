@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import android.util.Log;    //Для Логов
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -112,7 +113,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(this, TwoActivity.class);
-        startActivity(intent);
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        Toast.makeText(this, action, Toast.LENGTH_SHORT).show();
+
+
+        //Intent intent = new Intent(this, TwoActivity.class);
+        //startActivity(intent);
     }
 }
