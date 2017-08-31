@@ -28,9 +28,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         //Находим кнопки
         Button button1 = (Button)findViewById(R.id.button1);
+        Button buttonList = (Button)findViewById(R.id.buttonList);
 
         //Присваиваем кнопкам обработчик
         button1.setOnClickListener(this);   //Обработчик находится в самом активити
+        buttonList.setOnClickListener(this);
     }
 
 //            final Spinner feedbackSpinner1 = (Spinner) findViewById(R.id.Spinner1);
@@ -113,12 +115,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent intent = getIntent();
-        String action = intent.getAction();
-        Toast.makeText(this, action, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent();   //intent в который нужно будет перейти
+        // по id определеяем кнопку, вызвавшую этот обработчик
+        switch (view.getId()) {
+            case R.id.buttonList:
+                intent.setClass(this, ListActivity.class);
+                break;
+        }
+        startActivity(intent);
 
-
-        //Intent intent = new Intent(this, TwoActivity.class);
-        //startActivity(intent);
     }
 }

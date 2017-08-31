@@ -33,6 +33,12 @@
             android:background="@android:color/holo_blue_dark"
             android:src="@mipmap/ic_launcher_round"
             />
+
+        <Button
+            android:id="@+id/buttonList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ListActivity" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
